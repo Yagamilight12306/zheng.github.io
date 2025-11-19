@@ -1,12 +1,13 @@
 import React from "react";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+// import {
+//   NavigationMenu,
+//   NavigationMenuItem,
+//   NavigationMenuList,
+//   navigationMenuTriggerStyle,
+// } from "../../components/ui/navigation-menu";
 import { ModeToggle } from "./ModeToggle";
 import Link from "next/link";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuTriggerStyle } from "./ui/navigation-menu";
 
 //type结合interface
 

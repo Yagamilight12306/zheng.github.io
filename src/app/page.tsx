@@ -1,9 +1,10 @@
-import NavBar from "@/components/NavBar";
+// import NavBar from "@/components/NavBar";
 import React from "react";
 import Image from "next/image"; // 导入 Image 组件
 import {
   Bot,
   Facebook,
+  Lasso,
   Link as LinkIcon,
   Mail,
   Twitter,
@@ -51,8 +52,8 @@ export default function HomePage() {
         <div className="flex justify-center md:pt-[50px] pt-[30px]">
           <div className="flex justify-start space-x-6">
             <Link
-              href="https://youtube.com/your-channel"
-              target="_blank"
+              href="https://www.youtube.com/account"
+              target="_self"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-red-500 transition-colors"
             >
@@ -86,6 +87,7 @@ export default function HomePage() {
             >
               <Bot size={24} />
             </Link>
+
           </div>
         </div>
       </div>
