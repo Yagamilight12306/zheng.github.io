@@ -50,6 +50,8 @@ export default function Home() {
                 className="cursor-pointer rounded-lg shadow-lg hover:opacity-80 transition"
                 loading={index === 0 ? "eager" : "lazy"}
                 priority={index === 0}
+                quality={80}
+                sizes="200px"
               />
             </Link>
             <div className="flex-1 ml-6">

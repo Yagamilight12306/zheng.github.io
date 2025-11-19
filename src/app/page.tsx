@@ -24,7 +24,9 @@ export default function HomePage() {
             alt="My Image"
             width={300}
             height={180}
-            priority // 首屏图片优先加载
+            priority
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 300px"
           />
         </div>
         <div className="" id="自我介绍">

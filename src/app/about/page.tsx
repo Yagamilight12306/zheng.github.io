@@ -17,7 +17,9 @@ export default function About() {
               width={160}
               height={70}
               className="rounded-full"
-              priority // 首屏头像优先加载
+              priority
+              quality={85}
+              sizes="160px"
             />
           </div>
 
