@@ -24,7 +24,7 @@ export default function HomePage() {
             alt="My Image"
             width={300}
             height={180}
-            loading="lazy" // 懒加载webApp 性能优化 -> 只有使用和显示的时候才加载
+            priority // 首屏图片优先加载
           />
         </div>
         <div className="" id="自我介绍">

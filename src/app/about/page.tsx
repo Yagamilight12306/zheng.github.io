@@ -17,8 +17,7 @@ export default function About() {
               width={160}
               height={70}
               className="rounded-full"
-              loading="lazy"
-              priority={false}
+              priority // 首屏头像优先加载
             />
           </div>
 
