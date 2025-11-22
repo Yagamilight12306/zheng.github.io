@@ -162,50 +162,50 @@ export default function TodoList() {
           backgroundPosition: '0 0, 25px 25px'
         }}></div>
 
-      <div className="relative z-10 w-full max-w-3xl px-4 md:px-8">
-        <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold mb-2 text-black" style={{ fontFamily: 'sans-serif' }}>
+      <div className="relative z-10 w-full max-w-3xl px-4 sm:px-6 md:px-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-black" style={{ fontFamily: 'sans-serif' }}>
             待办事项管理
           </h1>
-          <p className="text-black font-bold text-lg">高效管理你的任务，提升工作效率</p>
+          <p className="text-black font-bold text-sm sm:text-base md:text-lg">高效管理你的任务，提升工作效率</p>
         </div>
 
         {/* 添加任务区域 - 扁平化圆形设计 */}
-        <div className="relative bg-white rounded-full p-6 mb-6 border-4 border-black">
+        <div className="relative bg-white rounded-full p-4 sm:p-6 mb-4 sm:mb-6 border-4 border-black">
           {/* 波点装饰 - 草间弥生风格 */}
-          <div className="absolute top-4 right-4 w-10 h-10 bg-black rounded-full"></div>
-          <div className="absolute bottom-4 left-4 w-8 h-8 bg-yellow-400 rounded-full border-2 border-black"></div>
-          <div className="absolute top-1/2 right-1/4 w-6 h-6 bg-red-600 rounded-full border-2 border-black"></div>
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-6 h-6 sm:w-10 sm:h-10 bg-black rounded-full"></div>
+          <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full border-2 border-black"></div>
+          <div className="absolute top-1/2 right-1/4 w-4 h-4 sm:w-6 sm:h-6 bg-red-600 rounded-full border-2 border-black"></div>
 
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-3 items-center">
+          <div className="flex flex-col gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center">
               <input
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="输入新的待办事项，按回车键添加..."
-                className="flex-1 px-6 py-4 border-4 border-black rounded-full focus:outline-none text-lg bg-white placeholder:text-gray-500 font-bold"
+                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 border-4 border-black rounded-full focus:outline-none text-sm sm:text-base md:text-lg bg-white placeholder:text-gray-500 font-bold"
               />
               <button
                 onClick={addTodo}
-                className="px-8 py-4 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition-colors font-bold border-4 border-black text-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition-colors font-bold border-4 border-black text-sm sm:text-base md:text-lg whitespace-nowrap"
               >
                 ➕ 添加
               </button>
             </div>
-            <div className="flex items-center gap-3">
-              <label className="text-black font-bold text-sm whitespace-nowrap">⏰ 设定时间:</label>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+              <label className="text-black font-bold text-xs sm:text-sm whitespace-nowrap">⏰ 设定时间:</label>
               <input
                 type="datetime-local"
                 value={scheduledDateTime}
                 onChange={(e) => setScheduledDateTime(e.target.value)}
-                className="flex-1 px-4 py-2 border-4 border-black rounded-full focus:outline-none text-sm bg-white font-bold"
+                className="flex-1 px-3 sm:px-4 py-2 border-4 border-black rounded-full focus:outline-none text-xs sm:text-sm bg-white font-bold"
               />
               {scheduledDateTime && (
                 <button
                   onClick={() => setScheduledDateTime("")}
-                  className="px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-4 border-black text-sm"
+                  className="px-3 sm:px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-4 border-black text-xs sm:text-sm whitespace-nowrap"
                 >
                   ✕ 清除
                 </button>
@@ -216,21 +216,21 @@ export default function TodoList() {
 
         {/* 统计信息 - 蒙德里安配色圆形 */}
         {totalCount > 0 && (
-          <div className="mb-6 text-center flex justify-center gap-4">
-            <div className="w-24 h-24 bg-red-600 rounded-full border-4 border-black flex flex-col items-center justify-center text-white font-bold"
+          <div className="mb-4 sm:mb-6 text-center flex justify-center gap-2 sm:gap-3 md:gap-4">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-red-600 rounded-full border-2 sm:border-4 border-black flex flex-col items-center justify-center text-white font-bold"
               style={{ animation: 'float 3s ease-in-out infinite' }}>
-              <p className="text-3xl">{totalCount}</p>
-              <p className="text-xs">总任务</p>
+              <p className="text-xl sm:text-2xl md:text-3xl">{totalCount}</p>
+              <p className="text-[10px] sm:text-xs">总任务</p>
             </div>
-            <div className="w-24 h-24 bg-yellow-400 rounded-full border-4 border-black flex flex-col items-center justify-center text-black font-bold"
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-yellow-400 rounded-full border-2 sm:border-4 border-black flex flex-col items-center justify-center text-black font-bold"
               style={{ animation: 'float 3s ease-in-out infinite 0.5s' }}>
-              <p className="text-3xl">{completedCount}</p>
-              <p className="text-xs">已完成</p>
+              <p className="text-xl sm:text-2xl md:text-3xl">{completedCount}</p>
+              <p className="text-[10px] sm:text-xs">已完成</p>
             </div>
-            <div className="w-24 h-24 bg-blue-600 rounded-full border-4 border-black flex flex-col items-center justify-center text-white font-bold"
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-blue-600 rounded-full border-2 sm:border-4 border-black flex flex-col items-center justify-center text-white font-bold"
               style={{ animation: 'float 3s ease-in-out infinite 1s' }}>
-              <p className="text-3xl">{totalCount - completedCount}</p>
-              <p className="text-xs">待完成</p>
+              <p className="text-xl sm:text-2xl md:text-3xl">{totalCount - completedCount}</p>
+              <p className="text-[10px] sm:text-xs">待完成</p>
             </div>
           </div>
         )}
@@ -238,10 +238,10 @@ export default function TodoList() {
         {/* 任务列表 - 扁平化圆形设计 */}
         <div className="space-y-4">
           {todos.length === 0 ? (
-            <div className="bg-white rounded-full p-12 text-center border-4 border-black">
-              <div className="text-6xl mb-4">⚪</div>
-              <p className="text-xl font-bold text-black mb-2">暂无待办事项</p>
-              <p className="text-black font-bold">添加你的第一个任务，开始高效工作吧！</p>
+            <div className="bg-white rounded-full p-6 sm:p-8 md:p-12 text-center border-4 border-black">
+              <div className="text-4xl sm:text-5xl md:text-6xl mb-2 sm:mb-4">⚪</div>
+              <p className="text-base sm:text-lg md:text-xl font-bold text-black mb-2">暂无待办事项</p>
+              <p className="text-sm sm:text-base text-black font-bold">添加你的第一个任务，开始高效工作吧！</p>
             </div>
           ) : (
             todos.map((todo, index) => {
@@ -258,7 +258,7 @@ export default function TodoList() {
               return (
                 <div
                   key={todo.id}
-                  className={`relative rounded-full p-6 transition-all border-4 border-black ${todo.completed
+                  className={`relative rounded-full p-4 sm:p-5 md:p-6 transition-all border-2 sm:border-4 border-black ${todo.completed
                     ? "opacity-60"
                     : "hover:scale-105"
                     }`}
@@ -269,44 +269,44 @@ export default function TodoList() {
                   }}
                 >
                   {/* 波点装饰 - 草间弥生风格 */}
-                  <div className="absolute top-3 right-3 w-8 h-8 bg-black rounded-full border-2 border-white"></div>
-                  <div className="absolute bottom-3 left-3 w-6 h-6 bg-yellow-400 rounded-full border-2 border-black"></div>
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-black rounded-full border-2 border-white"></div>
+                  <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-yellow-400 rounded-full border-2 border-black"></div>
                   {index % 3 === 0 && (
-                    <div className="absolute top-1/2 right-1/4 w-5 h-5 bg-red-600 rounded-full border-2 border-black"></div>
+                    <div className="absolute top-1/2 right-1/4 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 rounded-full border-2 border-black"></div>
                   )}
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                     {/* 完成复选框 - 圆形扁平化 */}
                     <input
                       type="checkbox"
                       checked={todo.completed}
                       onChange={() => toggleComplete(todo.id)}
-                      className="w-8 h-8 rounded-full border-4 border-black focus:ring-4 focus:ring-yellow-400 cursor-pointer transform hover:scale-110 transition-transform accent-yellow-400"
+                      className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 sm:border-3 md:border-4 border-black focus:ring-2 sm:focus:ring-4 focus:ring-yellow-400 cursor-pointer transform hover:scale-110 transition-transform accent-yellow-400 flex-shrink-0 mt-1 sm:mt-0"
                     />
 
                     {/* 任务内容 */}
-                    <div className="flex-1">
+                    <div className="flex-1 w-full sm:w-auto">
                       {editingId === todo.id ? (
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 w-full">
                           <input
                             type="text"
                             value={editingText}
                             onChange={(e) => setEditingText(e.target.value)}
                             onKeyPress={(e) => handleEditKeyPress(e, todo.id)}
-                            className="w-full px-4 py-2 border-4 border-black rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-400 bg-white font-bold text-black"
+                            className="w-full px-3 sm:px-4 py-2 border-2 sm:border-4 border-black rounded-full focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-yellow-400 bg-white font-bold text-black text-sm sm:text-base"
                           />
-                          <div className="flex items-center gap-2">
-                            <label className="text-black font-bold text-xs whitespace-nowrap">⏰ 时间:</label>
+                          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                            <label className="text-black font-bold text-[10px] sm:text-xs whitespace-nowrap">⏰ 时间:</label>
                             <input
                               type="datetime-local"
                               value={editingScheduledTime}
                               onChange={(e) => setEditingScheduledTime(e.target.value)}
-                              className="flex-1 px-3 py-1 border-4 border-black rounded-full focus:outline-none text-xs bg-white font-bold"
+                              className="flex-1 px-2 sm:px-3 py-1 border-2 sm:border-4 border-black rounded-full focus:outline-none text-[10px] sm:text-xs bg-white font-bold"
                             />
                             {editingScheduledTime && (
                               <button
                                 onClick={() => setEditingScheduledTime("")}
-                                className="px-2 py-1 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-2 border-black text-xs"
+                                className="px-2 py-1 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-2 border-black text-[10px] sm:text-xs whitespace-nowrap"
                               >
                                 ✕
                               </button>
@@ -315,13 +315,13 @@ export default function TodoList() {
                           <div className="flex gap-2">
                             <button
                               onClick={() => saveEdit(todo.id)}
-                              className="px-4 py-1 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-bold border-2 border-black text-xs"
+                              className="flex-1 px-3 sm:px-4 py-1 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-bold border-2 border-black text-[10px] sm:text-xs"
                             >
                               保存
                             </button>
                             <button
                               onClick={cancelEdit}
-                              className="px-4 py-1 bg-gray-500 text-white rounded-full hover:bg-gray-600 transition-colors font-bold border-2 border-black text-xs"
+                              className="flex-1 px-3 sm:px-4 py-1 bg-gray-500 text-white rounded-full hover:bg-gray-600 transition-colors font-bold border-2 border-black text-[10px] sm:text-xs"
                             >
                               取消
                             </button>
@@ -330,7 +330,7 @@ export default function TodoList() {
                       ) : (
                         <div>
                           <p
-                            className={`text-lg font-bold mb-2 ${todo.completed
+                            className={`text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2 ${todo.completed
                               ? "line-through opacity-50"
                               : ""
                               }`}
@@ -338,7 +338,7 @@ export default function TodoList() {
                           >
                             {todo.text}
                           </p>
-                          <div className="flex flex-wrap gap-4 text-xs font-bold" style={{ color: color.text, opacity: 0.8 }}>
+                          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-1 sm:gap-2 md:gap-4 text-[10px] sm:text-xs font-bold" style={{ color: color.text, opacity: 0.8 }}>
                             <span className="flex items-center gap-1">
                               <span>🕐</span>
                               创建: {formatTime(todo.createdAt)}
@@ -365,16 +365,16 @@ export default function TodoList() {
 
                     {/* 操作按钮 - 圆形扁平化 */}
                     {editingId !== todo.id && (
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 self-start sm:self-center">
                         <button
                           onClick={() => startEdit(todo)}
-                          className="w-12 h-12 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition-colors font-bold border-4 border-black text-lg"
+                          className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition-colors font-bold border-2 sm:border-3 md:border-4 border-black text-sm sm:text-base md:text-lg flex-shrink-0"
                         >
                           ✏️
                         </button>
                         <button
                           onClick={() => deleteTodo(todo.id)}
-                          className="w-12 h-12 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-4 border-black text-lg"
+                          className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors font-bold border-2 sm:border-3 md:border-4 border-black text-sm sm:text-base md:text-lg flex-shrink-0"
                         >
                           ✕
                         </button>
@@ -389,10 +389,10 @@ export default function TodoList() {
 
         {/* 清除已完成任务 - 扁平化圆形按钮 */}
         {completedCount > 0 && (
-          <div className="mt-8 text-center">
+          <div className="mt-6 sm:mt-8 text-center">
             <button
               onClick={() => setTodos(todos.filter(todo => !todo.completed))}
-              className="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-bold border-4 border-black text-lg"
+              className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-bold border-2 sm:border-4 border-black text-sm sm:text-base md:text-lg"
             >
               🗑️ 清除已完成任务 ({completedCount})
             </button>
