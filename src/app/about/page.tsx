@@ -46,11 +46,10 @@ export default function About() {
           <h1 className="text-[10px] md:pt-[10px] md:pb-[20px] pt-[20px] pb-[10px]">
             主要奖项
           </h1>
-          <div className="max-w-xs text-[10px] mt-1">
-            <p>1.xxxxxxxx</p>
-            <p>2.xxxxxxxx</p>
-            <p>3.xxxxxxxx</p>
-            <p>4.xxxxxxxx</p>
+          <div className="text-[10px] mt-1">
+            <p className="whitespace-nowrap">1.2024年 National College Digital Art &Desgin Awards </p>
+            <p className="whitespace-nowrap">2.2024年 American New concept Design Art Award</p>
+            <p className="whitespace-nowrap">3.2023年 The first session in 2023 Cross Strait Digital art Design Annual Awards</p>
           </div>
         </div>
       </div>

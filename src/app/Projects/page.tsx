@@ -14,7 +14,7 @@ const images = [
     alt: "My project 2",
     description: "这是项目2的介绍",
     extraDedcription: "这是额外的描述文本",
-    href: "作品2"
+    href: "/todolist"
   },
   {
     src: "/images/3.jpg",

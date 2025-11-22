@@ -16,8 +16,7 @@ export default function HomePage() {
   return (
     <>
       <div className="w-full">
-        {/* p-数字 和 p-[数字px]的区别 -> p-数字是响应式设计 p-[数字px]不是响应式设计 md sm lg */}
-        {/* md: 的意思 是浏览器尺寸>= md的尺寸的时候 才会应用的布局 */}
+        {/* 我的图片 */}  
         <div className="flex justify-center md:pt-[80px] md:pb-[50px] pt-[70px] pb-[50px] ">
           <Image
             src="/images/my-image.png"
@@ -47,7 +46,7 @@ export default function HomePage() {
           </div>
           <div className="flex justify-center py-2">
             <small className="text-sm font-bold italic leading-none">
-              (i am a fitness xxxxxx)
+              (I am a fitness enthusiast)
             </small>
           </div>
         </div>
@@ -78,7 +77,7 @@ export default function HomePage() {
               <Twitter size={24} />
             </Link>
             <Link
-              href="mailto:your-email@example.com"
+              href="http://192.168.0.7:3000/contact"
               className="text-gray-600 hover:text-green-500 transition-colors"
             >
               <Mail size={24} />
