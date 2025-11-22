@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 允许的开发环境跨域请求
+  allowedDevOrigins: ['192.168.0.7'],
   // 图片优化配置
   images: {
     // 图片格式优化（优先使用 AVIF，然后是 WebP）
@@ -8,6 +10,8 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     // 图片尺寸（小尺寸优化）
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // 允许的图片质量值
+    qualities: [75, 80, 85, 90],
     // 缓存时间（秒）
     minimumCacheTTL: 31536000, // 1年
     // 图片域名（如果需要外部图片）

@@ -8,7 +8,7 @@ const generatePortfolioImages = (): PortfolioImage[] => {
   const images: PortfolioImage[] = [];
   for (let i = 1; i <= 76; i++) {
     images[i - 1] = {
-      src: `/g design/${i}.jpg`,
+      src: `/g design/${i}.avif`,
       alt: `Image ${i}`,
     };
   }
@@ -64,6 +64,7 @@ export default function Portfolio() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                  unoptimized
                 />
               </div>
             </div>
@@ -114,6 +115,7 @@ export default function Portfolio() {
                   priority
                   quality={90}
                   sizes="100vw"
+                  unoptimized
                 />
               </div>
               <p className="text-white text-center mt-4 text-xl">

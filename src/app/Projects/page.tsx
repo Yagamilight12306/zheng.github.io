@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/g design/1.jpg",
+    src: "/g design/1.avif",
     alt: "My project 1",
     description: "地域活性化による旧劇場再生プロジェクト",
     extraDedcription: "The renovation project of the old theater site",
@@ -52,6 +52,7 @@ export default function Home() {
                 priority={index === 0}
                 quality={80}
                 sizes="200px"
+                unoptimized={image.src.endsWith('.avif')}
               />
             </Link>
             <div className="flex-1 ml-6">
